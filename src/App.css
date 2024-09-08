@@ -1,0 +1,62 @@
+
+
+
+.heading {
+  margin-top: 50px;
+  width: 100%;
+  position: relative;
+  align-self: center;
+  text-align: center;
+  color: rgb(0, 0, 0);
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+}
+
+
+
+#header {
+  background: #664c8f;
+  height: auto;
+  width: max-content;
+  padding: 100px 100px
+}
+
+.container {
+ display:flexbox;
+  /* text-align: center; */
+}
+
+
+
+.sidebar {
+  width: 200px;
+  height: 100vh;
+  background-color: #136a13;
+  color: #fff;
+  box-sizing: border-box;
+  position: fixed;
+}
+
+
+.sidebar a {
+  display: block;
+  color: #fff;
+  text-decoration: none;
+  padding: 10px;
+  margin-bottom: 10px;
+  transition: background-color 0.3s;
+}
+
+/* Change background color on hover */
+.sidebar a:hover {
+  background-color: #2980b9;
+}
+
