@@ -12,79 +12,42 @@ import { faker, Faker } from '@faker-js/faker'
 
 function App() {
 
-  // let count = 0;
-
-  //  while(count<2){
-  //     addItem1();
-  //     addItem2();
-  //     i++;
-  //   };
-  window.onload = function () {
-    if (localStorage.getItem("hasCodeRunBefore") === null) {
-      /** Your code here. **/
-      addItem1();
-      addItem2();
-      localStorage.setItem("hasCodeRunBefore", true);
-    }
-  }
-
-
+  const [count, setCount] = useState(0)
 
   function addItem1() {
-
     const newItem = document.createElement("li");
     newItem.textContent = faker.person.fullName() +
      " In " + faker.location.country();
     const newImg = document.createElement('img');
     newImg.src = bread;
-
-    // fakeImg =faker.image.urlLoremFlickr({  width: 100,
-    //   height: 200, category: 'bread' });
-
-
-    // fakebread = faker.image.urlLoremFlickr({ category: 'food' });
-
     newItem.appendChild(newImg);
-    // newImg.src(bread);
-    // newPic =faker.image.urlPicsumPhotos;
     document.getElementById("myList").appendChild(newItem);
-
 
     // document.getElementById("container").appendChild(newItem);
     // document.getElementsByClassName("container").appendChild(newImg);
-
-
   }
-  function addItem2() {
-    const newItem = document.createElement("li");
-    newItem.textContent =newItem.textContent = faker.person.fullName() +
-    " In " + faker.location.country();
-    const newImg = document.createElement('img');
-    newImg.src = bread;
-
-    // fakeImg =faker.image.urlLoremFlickr({  width: 100,
-    //   height: 200, category: 'bread' });
-
-
-    // fakebread = faker.image.urlLoremFlickr({ category: 'food' });
-
-    newItem.appendChild(newImg);
-    // newImg.src(bread);
-    // newPic =faker.image.urlPicsumPhotos;
-    document.getElementById("myList2").appendChild(newItem);
+  
+  function addFive(){
+  addItem1();
+  addItem1();
+  addItem1();
+  addItem1();
+  addItem1();
   }
-  <button onClick={() => setCount((count) => count + 1)}></button>
+  
+
+
 
 
   return (
     <>
       <div class="navbar">
-        <a href="#home">Home</a>
-        <a href="#news">News</a>
-        <a href="#contact">Contact</a>
+        <a href="#Home">Home</a>
+        <a href="#News">News</a>
+        <a href="#Contact">Contact</a>
       </div>
 
-      <div class="container" onload="loaded()" >
+      <div class="container" onLoad={() =>addFive()}>
         <div class="sidebar left-sidebar">
           <a href="#">Favorites</a>
           <a href="#">Help</a>
@@ -92,7 +55,7 @@ function App() {
         </div>
         <div class="content">
           <div class='heading' >
-            <header><img src={sBread} alt="sliced bread" /></header>
+            {/* <header><img src={sBread} alt="sliced bread" /></header> */}
             <h1 class="centered">BreadIt </h1>
           </div>
 
@@ -100,21 +63,14 @@ function App() {
             <ul id="myList">
 
             </ul>
-            <button onClick={() => addItem1()}>Add Item</button>
-
-            <p>Content for the first scrolling container...</p>
+            <button onClick={() => addFive()}>Load Topics</button>
 
           </div>
-          <div class="scroll-container">
-
-            <ul id="myList2">
-
-            </ul>
-
-            <button onClick={() => addItem2()}>Add Item</button>
-            <p>Content for the second scrolling container...</p>
-
-          </div>
+        </div>
+        <div class="sidebar right-sidebar">
+          <a href="#">Add</a>
+          <a href="#">Add</a>
+          <a href="#">Add</a>
         </div>
       </div>
 

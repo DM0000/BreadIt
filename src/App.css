@@ -4,10 +4,14 @@
 .heading {
   margin-top: 50px;
   width: 100%;
+  height: 200px;
   position: relative;
   align-self: center;
   text-align: center;
   color: rgb(0, 0, 0);
+  background-image: url(assets/Bread6.jpg);
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
 }
 
 /* Centered text */
@@ -27,36 +31,55 @@
   height: auto;
   width: max-content;
   padding: 100px 100px
+ 
 }
 
+
 .container {
- display:flexbox;
+ display:flex;
   /* text-align: center; */
 }
 
-
-
 .sidebar {
   width: 200px;
-  height: 100vh;
-  background-color: #136a13;
-  color: #fff;
+  height: 100%;
+  background-color: #f4f4f4;
+  padding: 15px;
   box-sizing: border-box;
   position: fixed;
 }
 
+.left-sidebar {
+  order: 1;
+  left: 0;
+}
+
+.content {
+  flex: 1;
+  padding: 20px;
+  box-sizing: border-box;
+  order: 2;
+  align-self: center;
+}
+
+.right-sidebar {
+  width: 200px;
+  right: 0;
+  background-color: #f4f4f4;
+  padding: 15px;
+  box-sizing: border-box;
+  order: 3;
+}
 
 .sidebar a {
   display: block;
-  color: #fff;
+  color: #333;
   text-decoration: none;
-  padding: 10px;
   margin-bottom: 10px;
-  transition: background-color 0.3s;
 }
 
-/* Change background color on hover */
 .sidebar a:hover {
-  background-color: #2980b9;
+  background-color: #ddd;
 }
+
 
