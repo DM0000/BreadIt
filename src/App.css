@@ -1,6 +1,4 @@
 
-
-
 .heading {
   /* margin-top: 10px; */
   width: 100%;
@@ -13,25 +11,12 @@
   background-repeat: no-repeat;
   background-size: 100% 100%;
 }
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-}
-
-
-
 #header {
   background: #664c8f;
   height: auto;
   width: max-content;
   padding: 100px 100px
- 
+
 }
 
 
@@ -54,14 +39,6 @@
   left: 0;
 }
 
-.content {
-  flex: 1;
-  padding: 20px;
-  box-sizing: border-box;
-  order: 2;
-  align-self: center;
-  flex-direction: column;
-}
 
 .right-sidebar {
   width: 200px;
@@ -82,5 +59,3 @@
 .sidebar a:hover {
   background-color: #ddd;
 }
-
-
