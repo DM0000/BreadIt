@@ -11,7 +11,11 @@ function Person(props) {
   );
 }
 
-function dropDown(props) {
+
+function DropDown(props) {
+  const fakeName = faker.person.fullName();
+  const fakeCountry = faker.location.country();
+  
   return (
   <>
     <h2 className='accordion-header'>
@@ -48,8 +52,7 @@ function dropDown(props) {
 }
 
 export default function FakeArticleStub() {
-  const fakeName = faker.person.fullName();
-  const fakeCountry = faker.location.country();
+
   
   return (
     <div className='accordion-item'>
@@ -83,7 +86,7 @@ export default function FakeArticleStub() {
         </div>
       </div> */}
 
-<dropDown name= {1}/>
+<DropDown name= {1}/>
     </div>
   );
 }
