@@ -1,10 +1,8 @@
-import { useState, useEffect, useLayoutEffect } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import sBread from './assets/SlicedBread.jpg'
+import { useEffect } from 'react'
+// import sBread from './assets/SlicedBread.jpg'
 import bread from './assets/Bread.jpg'
 import './App.css'
-import { faker, Faker } from '@faker-js/faker'
+import { faker } from '@faker-js/faker'
 
 
 
@@ -12,15 +10,15 @@ import { faker, Faker } from '@faker-js/faker'
 
 function App() {
 
-  const [count, setCount] = useState(0)
+  // const [count, setCount] = useState(0)
 
-  function MyButton() {
-    return (
-      <li>{ faker.person.fullName() +
-        " In " + faker.location.country()}
-        <img src = {sBread}/>  </li>
-    );
-  }
+  // function MyButton() {
+  //   return (
+  //     <li>{ faker.person.fullName() +
+  //       " In " + faker.location.country()}
+  //       <img src = {sBread}/>  </li>
+  //   );
+  // }
 
   function addItem1() {
     const newItem = document.createElement("li");
@@ -32,13 +30,13 @@ function App() {
     return document.getElementById("myList").appendChild(newItem);
   }
 
-  function addItem() {
+  // function addItem() {
 
-  return (
-    <li textContent={faker.person.fullName()} >  <img src={bread}/></li>
-  );
+  // return (
+  //   <li textContent={faker.person.fullName()} >  <img src={bread}/></li>
+  // );
 
-  }
+  // }
 
 
   function addFive(){
@@ -48,22 +46,23 @@ function App() {
   }
 
 
-  useEffect(() => {
+  useEffect((addFive) => {
+    "sdasdfsa"
     addFive();
   }, []);
 
 
   return (
     <>
-      <div class="navbar">
+      <div className="navbar">
         <a href="#Home">Home</a>
         <a href="#News">News</a>
         <a href="#Contact">Contact</a>
       </div>
 
-      <div class="container" >
+      <div className="container" >
 
-        <div class="sidebar left-sidebar">
+        <div className="sidebar left-sidebar">
           <a href="#">Favorites</a>
           <a href="#">Build a Bread</a>
           <a href="#">Messages</a>
@@ -71,13 +70,13 @@ function App() {
 
 
         </div>
-        <div class="content" >
-          <div class='heading' >
+        <div className="content" >
+          <div className='heading' >
             {/* <header><img src={sBread} alt="sliced bread" /></header> */}
-            <h1 class="centered">BreadIt </h1>
+            <h1 className="centered">BreadIt </h1>
           </div>
 
-          <div class="scroll-container">
+          <div className="scroll-container">
 
             <ul id="myList">
 {/*             <MyButton/> */}
@@ -91,7 +90,7 @@ function App() {
 
           </div>
         </div>
-        <div class="sidebar right-sidebar" >
+        <div className="sidebar right-sidebar" >
           <a href="#">Future Add</a>
           <a href="#">Future Add</a>
           <a href="#">Future Add</a>
