@@ -40,4 +40,13 @@ function NavBar() {
 );
 }
 
+function oldNav(){
+    return (
+          <div class="navbar">
+                <a href="#Home">Home</a>
+                <a href="#News">News</a>
+                <a href="#Contact">Contact</a>
+              </div>
+        );
+    }
 export default NavBar

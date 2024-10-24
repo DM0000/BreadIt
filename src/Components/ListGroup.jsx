@@ -3,8 +3,8 @@
 function ListGroup2 () {
     return (
  <>
-<div className="card " >
-  <ul className="list-group list-group-flush">
+<div className="card left-sidebar" >
+  <ul className="list-group">
     <li className="list-group-item">An item</li>
     <li className="list-group-item">A second item</li>
     <li className="list-group-item">A third item</li>
@@ -19,7 +19,7 @@ function ListGroup2 () {
 function ListGroup() {
     return (
  <>
-<ul className="list-group">
+<ul className="list-group sidebar left-sidebar">
   <li className="list-group-item">An item</li>
   <li className="list-group-item">A second item</li>
   <li className="list-group-item">A third item</li>
