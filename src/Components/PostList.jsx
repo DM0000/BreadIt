@@ -1,17 +1,15 @@
-import FakeArticleStub from './ArticleStub.jsx'
+import FakeArticleStub from "./ArticleStub.jsx";
 
-
-
- function PostList() {
-return  (
-<div className="accordion scroll-container" id="accordionExample">
-    <FakeArticleStub/>
-    <FakeArticleStub/>
-    <FakeArticleStub/>
-  
-</div>
-
-    );
+//TODo: update to take stubProp
+function PostList() {
+  return (
+    <div className='accordion scroll-container' id='accordionExample'>
+      {/* TODO:Refactor to use map */}
+      <FakeArticleStub />
+      <FakeArticleStub />
+      <FakeArticleStub />
+    </div>
+  );
 }
 
 export default PostList;
