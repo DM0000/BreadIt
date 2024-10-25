@@ -11,7 +11,7 @@ function Person(props) {
   );
 }
 
-//TODO: refactor for bootstrap
+//TODO: refactor for bootstrap.
 function DropDown(props) {
   const fakeName = faker.person.fullName();
   const fakeCountry = faker.location.country();
