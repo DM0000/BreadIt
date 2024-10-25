@@ -12,7 +12,7 @@ function App() {
   return (
     <>
       <NavBar />
-      {/* TODO: pull container   div or component? */}
+      {/* TODO: pull container   div or component?? */}
       <div className ='container'>
         <ListGroup className='sidebar left-sidebar' />
         <Content/>
