@@ -6,8 +6,16 @@ import SideBar from "./Components/SideBar.jsx";
 import Content from "./Components/Content.jsx";
 
 
+
+function addToState(something){
+  setPeople(people.push(something))
+}
+
+
 function App() {
   const [people, setPeople] = useState([]);
+
+  
 
   return (
     <>

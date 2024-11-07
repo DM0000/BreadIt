@@ -12,9 +12,10 @@
   "dependencies": {
     "@faker-js/faker": "^9.0.0",
     "bootstrap": "^5.3.3",
-    "popper.js": "^1.16.1",
     "husky": "^9.1.6",
+    "popper.js": "^1.16.1",
     "react": "^18.3.1",
+    "react-bootstrap": "^2.10.5",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
@@ -27,6 +28,7 @@
     "eslint-plugin-react-hooks": "^5.1.0-rc.0",
     "eslint-plugin-react-refresh": "^0.4.9",
     "globals": "^15.9.0",
+    "miragejs": "^0.1.48",
     "vite": "^5.4.1"
   },
   "husky": {

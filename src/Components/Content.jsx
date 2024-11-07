@@ -9,7 +9,7 @@ function Content(){
             <h1 className='centered'>BreadIt </h1>
           </div>
           <PostList />
-          <button className='centeredButton'>
+          <button className='centeredButton' >
             Load More Topics
           </button>
         </div>
