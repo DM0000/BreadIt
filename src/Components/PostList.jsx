@@ -1,68 +1,39 @@
 import DropDown from "./ArticleStub.jsx";
-import { createServer } from "miragejs";
-import { faker, Faker } from "@faker-js/faker";
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-
-let server = createServer();
-server.get("/api/users", {
-  users: [
-    { name: faker.person.fullName(), country: faker.location.country() },
-    { name: faker.person.fullName(), country: faker.location.country() },
-    { name: faker.person.fullName(), country: faker.location.country() },
-    { name: faker.person.fullName(), country: faker.location.country() },
-  ],
-});
-
-// let [users, setUsers] = useState([]);
-
-
-
-//   let [users, setUsers] = useState([]);
-//  useEffect(() => {
-//    fetch("/api/users")
-//      .then((res) => res.json())
-//      .then((json) => {
-//        setUsers(users.concat(json.users));
-//      });
-//  }, []);
+import PropTypes from "prop-types";
 
 //TODo: update to take stubProp
-function PostList() {
-  let [users, setUsers] = useState([]);
-
+function PostList({ number }) {
+  let [usersPosts, setUsersPosts] = useState([]);
   useEffect(() => {
-    fetch("/api/users")
+    fetch(`api/users/${number}`)
       .then((res) => res.json())
       .then((json) => {
-        setUsers(json.users);
+        setUsersPosts(usersPosts.concat(json));
       });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-
-  // function addUser() {
-  //   useEffect(() => {
-  //     fetch("/api/users")
-  //       .then((res) => res.json())
-  //       .then((json) => {
-  //         setUsers(users.concat(json.users));
-  //       });
-  //   }, []);
-  // }
 
   return (
     <Accordion defaultActiveKey='0'>
-      {/* TODO:Refactor to use map */}
-      {users.map((user) => (
+      {usersPosts.map(({ name, country, index }) => (
+        // eslint-disable-next-line react/jsx-key
         <DropDown
-          data-bs-target={user.name}
-          id={user.name}
-          name={user.name}
-          country={user.country}
+          key={`${name}+${index}`}
+          eventKey={`${name}+${index}`}
+          id={index}
+          name={name}
+          country={country}
         />
       ))}
       ;
     </Accordion>
   );
 }
+
+PostList.propTypes = {
+  number: PropTypes.number.isRequired,
+};
 
 export default PostList;
