@@ -1,60 +1,40 @@
 import bread from "../assets/Bread.jpg";
-import { faker, Faker } from "@faker-js/faker";
-import { useState } from "react";
-// import { Dropdown } from "bootstrap";
+import Accordion from "react-bootstrap/Accordion";
+import PropTypes from "prop-types";
+import { faker } from "@faker-js/faker";
 
-function Person(props) {
+function Person({ name, country }) {
   return (
     <div>
-      {props.name} in {props.country}
+      {name} in {country}
     </div>
   );
 }
+
+Person.propTypes = {
+  name: PropTypes.string,
+  country: PropTypes.string,
+};
 
 //TODO: refactor for bootstrap.
-function DropDown(props) {
-  const fakeName = faker.person.fullName();
-  const fakeCountry = faker.location.country();
-
+export default function DropDown({ name, country, index }) {
+ let fill = faker.lorem.paragraph({ min: 4, max: 12 });
   return (
-    <>
-      <h2 className='accordion-header'>
-        <button
-          className='accordion-button collapsed'
-          type='button'
-          data-bs-toggle='collapse'
-          data-bs-target={props.name}
-          aria-expanded='false'
-          aria-controls='collapseTwo'
-        >
-          <img src={bread} />
-          <Person name={fakeName} country={fakeCountry} />
-        </button>
-      </h2>
-      <div
-        id={props.name}
-        className='accordion-collapse collapse'
-        data-bs-parent='#accordionExample'
-      >
-        <div className='accordion-body'>
-          <strong>This is the second item's accordion body.</strong> It is
-          hidden by default, until the collapse plugin adds the appropriate
-          classes that we use to style each element. These classes control the
-          overall appearance, as well as the showing and hiding via CSS
-          transitions. You can modify any of this with custom CSS or overriding
-          our default variables. It's also worth noting that just about any HTML
-          can go within the <code>.accordion-body</code>, though the transition
-          does limit overflow.
-        </div>
-      </div>
-    </>
+    <Accordion.Item eventKey={`${name}+${index}`}>
+      <Accordion.Header>
+        <img src={bread} />
+        <h2>
+          {" "}
+          <Person name={name} country={country} />
+        </h2>
+      </Accordion.Header>
+      <Accordion.Body>{fill}</Accordion.Body>
+    </Accordion.Item>
   );
 }
 
-export default function FakeArticleStub() {
-  return (
-    <div className='accordion-item'>
-      <DropDown name={1} />
-    </div>
-  );
-}
+DropDown.propTypes = {
+  name: PropTypes.string,
+  country: PropTypes.string,
+  index: PropTypes.number
+};

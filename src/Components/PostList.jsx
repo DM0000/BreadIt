@@ -1,15 +1,30 @@
-import FakeArticleStub from "./ArticleStub.jsx";
+import DropDown from "./ArticleStub.jsx";
+import { useState, useEffect } from "react";
+import Accordion from "react-bootstrap/Accordion";
+import PropTypes from "prop-types";
 
-//TODo: update to take stubProp
-function PostList() {
+function PostList({ number }) {
+  let [usersPosts, setUsersPosts] = useState([]);
+  useEffect(() => {
+    fetch(`api/users/${number}`)
+      .then((res) => res.json())
+      .then((json) => {
+        setUsersPosts(usersPosts.concat(json));
+      });
+  }, []);
+
   return (
-    <div className='accordion scroll-container' id='accordionExample'>
-      {/* TODO:Refactor to use map */}
-      <FakeArticleStub />
-      <FakeArticleStub />
-      <FakeArticleStub />
-    </div>
+    <Accordion defaultActiveKey='0'>
+      {usersPosts.map(({ name, country, index }) => (
+        <DropDown key={`${name}+${index}`} name={name} country={country} />
+      ))}
+      ;
+    </Accordion>
   );
 }
+
+PostList.propTypes = {
+  number: PropTypes.number.isRequired,
+};
 
 export default PostList;
