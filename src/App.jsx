@@ -2,8 +2,7 @@ import "./App.css";
 import NavBar from "./components/NavBar.jsx";
 import ListGroup from "./components/ListGroup.jsx";
 import SideBar from "./components/SideBar.jsx";
-import Content from "./components/Content.jsx";
-
+import Content from "./Components/Content.jsx";
 function App() {
   return (
     <>

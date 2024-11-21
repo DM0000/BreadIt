@@ -10,11 +10,11 @@ export default function startServer() {
       this.get("/users/:amount", (_, request) => {
         let amount = request.params.amount;
 
-        let x = generatePosts(amount);
+        let post = generatePosts(amount);
 
-        let y = JSON.stringify(x);
+        let jsonPost = JSON.stringify(post);
 
-        return y;
+        return jsonPost;
       });
     },
   });
