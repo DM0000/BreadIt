@@ -5,7 +5,6 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
 import startServer from "./server/fakeServer.jsx";
 
-//sdasdhfhgf
 startServer();
 
 createRoot(document.getElementById("root")).render(
