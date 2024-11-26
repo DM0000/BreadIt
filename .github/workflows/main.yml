@@ -2,7 +2,7 @@ name: GitHub Actions
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  ActionsTest7:
+  ActionsTest:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -16,7 +16,7 @@ jobs:
         run: |
           ls ${{ github.workspace }}
       - run: echo "🍏 This job's status is ${{job.status}}."
-  eslint2:
+  eslint:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
