@@ -1,7 +1,7 @@
-import DropDown from "./ArticleStub.jsx";
 import { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
 import { PropTypes } from "prop-types";
+import DropDown from "./ArticleStub.jsx";
 
 function PostList({ number }) {
   let [usersPosts, setUsersPosts] = useState([]);
@@ -11,7 +11,8 @@ function PostList({ number }) {
       .then((json) => {
         setUsersPosts(usersPosts.concat(json));
       });
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [number]);
 
   return (
     <Accordion defaultActiveKey='0'>
