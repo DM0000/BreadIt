@@ -1,5 +1,5 @@
 import PostList from "./PostList";
-import PropTypes from "prop-types";
+import {PropTypes} from "prop-types";
 
 //TODo: combine heading and h1 div
 function Content({ initialPostCount }) {

@@ -1,8 +1,8 @@
-name: GitHub Actions Demo
+name: GitHub Actions
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
-  Explore-GitHub-Actions:
+  ActionsTest:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was automatically triggered by a ${{ github.event_name }} event."
@@ -15,13 +15,12 @@ jobs:
       - name: List files in the repository
         run: |
           ls ${{ github.workspace }}
-      - run: echo "🍏 This job's status is ${{ Explore-GitHub-Actions.status }}."
-
+      - run: echo "🍏 This job's status is ${{job.status}}."
   eslint:
     runs-on: ubuntu-latest
-    - uses: actions/checkout@v2
-    - name: Install modules
-      run: yarn
-    - name: Run ESLint
-      run: eslint . --ext .js,.jsx,.ts,.tsx/
-       - run: echo "🍏 This job's status is ${{ eslint.status }}."
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v4
+      - run: npm install
+      - run: npm run lint
+      - run: echo "🍏 This job's status is ${{job.status}}."

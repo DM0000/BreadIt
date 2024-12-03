@@ -6,7 +6,6 @@ import "bootstrap/dist/js/bootstrap.bundle.js";
 import startServer from "./server/fakeServer.jsx";
 
 startServer();
-
 createRoot(document.getElementById("root")).render(
   <StrictMode>
     <App />

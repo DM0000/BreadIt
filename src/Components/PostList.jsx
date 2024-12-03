@@ -1,7 +1,7 @@
 import DropDown from "./ArticleStub.jsx";
 import { useState, useEffect } from "react";
 import Accordion from "react-bootstrap/Accordion";
-import PropTypes from "prop-types";
+import { PropTypes } from "prop-types";
 
 function PostList({ number }) {
   let [usersPosts, setUsersPosts] = useState([]);
